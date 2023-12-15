@@ -16,7 +16,6 @@ const App = () => {
   const [weatherData, setWeatherData] = useState([]);
   const [filteredPlaces, setFilteredPlaces] = useState([]);
   const [places, setPlaces] = useState([]);
-
   const [autocomplete, setAutocomplete] = useState(null);
   const [childClicked, setChildClicked] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
@@ -35,9 +34,9 @@ const App = () => {
 
   useEffect(() => {
     if (bounds) {
-      setIsLoading(true);
+      setIsLoading(true);// eslint-disable-next-line
 
-      getWeatherData(coords.lat, coords.lng)
+      getWeatherData(coords.lat, coords.lng)// eslint-disable-line
         .then((data) => setWeatherData(data));
 
       getPlacesData(type, bounds.sw, bounds.ne)
